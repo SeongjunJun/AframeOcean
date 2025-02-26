@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-connecting-line@0.2.1/index.min.js"></script>
+  <script src="https://gftruj.github.io/webzamples/aframe/models/components/model-relative-opacity.js"></script>
+  <script src="scripts/spear.js"></script>
+  <script src="scripts/fish.js"></script>
+  <script src="scripts/script.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="spear-model" src="assets/models/spear.glb"></a-asset-item>
+      <a-asset-item id="fish1" src="assets/models/fish1.glb"></a-asset-item>
+      <a-asset-item id="fish2" src="assets/models/fish2.glb"></a-asset-item>
+      <a-asset-item id="fish3" src="assets/models/fish3.glb"></a-asset-item>
+      <a-asset-item id="grass" src="assets/models/grass.glb"></a-asset-item>
+      <a-asset-item id="log" src="assets/models/log_stack.glb"></a-asset-item>
+      <a-asset-item id="bush" src="assets/models/bush.glb"></a-asset-item>
+      <a-asset-item id="rock1" src="assets/models/rock1.glb"></a-asset-item>
+      <a-asset-item id="rock2" src="assets/models/rock2.glb"></a-asset-item>
+      <a-asset-item id="rock3" src="assets/models/rock3.glb"></a-asset-item>
+      <a-asset-item id="stone1" src="assets/models/stone1.glb"></a-asset-item>
+      <a-asset-item id="stone2" src="assets/models/stone2.glb"></a-asset-item>
+      <a-asset-item id="stone3" src="assets/models/stone3.glb"></a-asset-item>
+      <a-asset-item id="tent" src="assets/models/tent.glb"></a-asset-item>
+      <a-asset-item id="tree1" src="assets/models/tree1.glb"></a-asset-item>
+      <a-asset-item id="tree2" src="assets/models/tree2.glb"></a-asset-item>
+
+      <img id="sky" src="assets/images/sky.jpg" />
+      <img id="greengrass" src="assets/images/greengrass.jpg" />"
+    </a-assets>
+    <a-sky src="#sky"></a-sky>
+
+    <!-- Lights -->
+    <a-light type="directional" castShadow="true" intensity="0.4" color="#D0EAF9" position="5 3 1"></a-light>
+    <a-light intensity="0.8" type="ambient" color="#B4C5EC"></a-light>
+
+    <!-- Camera -->
+    <a-camera position="0 1.6 5" look-controls="pointerLockEnabled: true">>
+      <a-cursor>
+      </a-cursor>
+    </a-camera>
+
+    <!-- Ocean -->
+    <a-ocean depth="50" width="50" amplitude="0" amplitude-variance="0.1" speed="1.5" speed-variance="1"
+      density="50"></a-ocean>
+    <a-ocean depth="50" width="50" opacity="0.5" amplitude="0" amplitude-variance="0.15" speed="1.5" speed-variance="1"
+      density="50"></a-ocean>
+
+    <!-- Island -->
+    <a-box position="0 0 0" rotation="-90 0 0" width="20" height="20" depth="2" src="#greengrass" side="double"
+      repeat="10 10">
+    </a-box>
+
+    <!-- Decorations -->
+    <a-gltf-model src="#grass" position="8 1 1" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="3 1 1" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="-4 1 -2" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="7 1 4" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="-7 1 2" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="-6 1 -8" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="-8 1 1" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="-3 1 1" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="4 1 -2" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="-7 1 4" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="7 1 2" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#grass" position="6 1 -8" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#log" position="0 1 -2" scale="2 2 2" rotation="0 50 0"></a-gltf-model>
+    <a-gltf-model src="#bush" position="-2 1 -3" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#bush" position="-3 1 1" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#bush" position="-2 1 4" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#bush" position="-4 1 -1" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#rock1" position="-3 1 -3" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#rock2" position="1 1 0" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#rock3" position="-2 1 2" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#rock3" position="-5 1 0" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#stone1" position="8 1 -2" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#stone2" position="-2 1 -7" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#stone3" position="-6 1 -3" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#stone1" position="-8 1 2" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#stone2" position="2 1 -7" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#stone3" position="6 1 -3" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#tent" position="0 1 0" scale="3 3 3" rotation="0 210 0"></a-gltf-model>
+    <a-gltf-model src="#tree1" position="-3 1 8" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#tree1" position="4 1 -5" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#tree2" position="-2 1 6" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#tree2" position="-3 1 -7" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#tree1" position="3 1 8" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#tree1" position="-4 1 -5" scale="2 2 2"></a-gltf-model>
+    <a-gltf-model src="#tree2q" position="2 1 6" scale="3 3 3"></a-gltf-model>
+    <a-gltf-model src="#tree2" position="-3 1 -7" scale="2 2 2"></a-gltf-model>
+
+
+    <!-- Bucket -->
+    <!-- <a-cone position="0 1 3" radius-bottom="0.7" radius-top="1" height="0.7" rotation="0 90 0"
+      material="color: silver; metalness: 0.8; roughness: 0.2; side:double" opacity="0.5" geometry="openEnded: true">
+  </a-scene> -->
+
+    <div
+      style="position: absolute; bottom: 10px; left: 10px; color: white; font-size: 40px; font-family: Arial, sans-serif; z-index: 10;">
+      <div>Fish Count:</div>
+      <span id="fish-count"></span>
+    </div>
+
+    <div id="error"
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: red; font-size: 40px; font-family: Arial, sans-serif; z-index: 10; display: none;">
+      Get closer to the fish!
+    </div>
+
+</body>
+
+</html>
